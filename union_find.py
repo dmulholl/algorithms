@@ -47,7 +47,7 @@ class UnionFind:
 
 class TestUnionFind(unittest.TestCase):
 
-    test_pairs = [
+    connected_pairs = [
         (4, 3),
         (3, 8),
         (6, 5),
@@ -60,7 +60,7 @@ class TestUnionFind(unittest.TestCase):
 
     def test_unionfind(self):
         uf = UnionFind(10)
-        for p, q in self.test_pairs:
+        for p, q in self.connected_pairs:
            uf.union(p, q)
         self.assertTrue(uf.connected(0, 0))
         self.assertTrue(uf.connected(0, 1))

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##
-# This module contains reference implementations of the binary search algorithm. This
+# This module contains a reference implementation of the binary search algorithm. This
 # algorithm searches an input array (which must already be sorted in increasing order) for
 # a target value. If the target is found its index is returned, otherwise -1 is returned.
 ##

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##
-# This module contains a reference implementation for a linked list collection type.
+# This module contains a reference implementation of a linked list collection type.
 ##
 
 import unittest

@@ -7,18 +7,18 @@ import unittest
 import random
 
 
-def mergesort(array):
-    sort(array, array.copy(), 0, len(array) - 1)
+def sort(array):
+    mergesort(array, array.copy(), 0, len(array) - 1)
 
 
 # Sorts the slice of `array` identified by the inclusive indices `low` and `high`. The auxiliary
 # array is used as scratch space and should have the same length as `array`.
-def sort(array, aux_array, low, high):
+def mergesort(array, aux_array, low, high):
     if high <= low:
         return
     mid = low + (high - low) // 2
-    sort(array, aux_array, low, mid)
-    sort(array, aux_array, mid + 1, high)
+    mergesort(array, aux_array, low, mid)
+    mergesort(array, aux_array, mid + 1, high)
     merge(array, aux_array, low, mid, high)
 
 
@@ -53,13 +53,13 @@ def is_sorted(array):
     return True
 
 
-class TestMergesort(unittest.TestCase):
+class TestSort(unittest.TestCase):
 
-    def test_mergesort(self):
+    def test_sort(self):
         test_array = [i for i in range(1000)]
         while is_sorted(test_array):
             random.shuffle(test_array)
-        mergesort(test_array)
+        sort(test_array)
         self.assertTrue(is_sorted(test_array))
 
 

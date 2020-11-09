@@ -7,7 +7,7 @@ import unittest
 import random
 
 
-def shellsort(array):
+def sort(array):
     h = 1
     while h < len(array) // 3:
         h = h * 3 + 1
@@ -32,13 +32,13 @@ def is_sorted(array):
     return True
 
 
-class TestShellsort(unittest.TestCase):
+class TestSort(unittest.TestCase):
 
-    def test_shellsort(self):
+    def test_sort(self):
         test_array = [i for i in range(1000)]
         while is_sorted(test_array):
             random.shuffle(test_array)
-        shellsort(test_array)
+        sort(test_array)
         self.assertTrue(is_sorted(test_array))
 
 

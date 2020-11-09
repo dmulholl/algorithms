@@ -9,6 +9,8 @@ import insertion_sort
 import selection_sort
 import shellsort
 import mergesort
+import quicksort
+import quicksort_3way
 
 
 SMALL = 1_000
@@ -16,11 +18,13 @@ LARGE = 10_000
 
 
 algorithms = [
-    bubble_sort.bubble_sort,
-    selection_sort.selection_sort,
-    insertion_sort.insertion_sort,
-    shellsort.shellsort,
-    mergesort.mergesort,
+    bubble_sort,
+    selection_sort,
+    insertion_sort,
+    shellsort,
+    mergesort,
+    quicksort,
+    quicksort_3way,
 ]
 
 
@@ -50,7 +54,7 @@ else:
 
 
 for algorithm in algorithms:
-    t_small = runtime(algorithm, small_array.copy())
-    t_large = runtime(algorithm, large_array.copy())
+    t_small = runtime(algorithm.sort, small_array.copy())
+    t_large = runtime(algorithm.sort, large_array.copy())
     print(f"{algorithm.__name__:16} {t_small:12.4f} {t_large:12.4f}")
 

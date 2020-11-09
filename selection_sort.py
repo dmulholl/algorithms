@@ -7,7 +7,7 @@ import unittest
 import random
 
 
-def selection_sort(array):
+def sort(array):
     for i in range(len(array)):
         index_of_min = i
         for j in range(i + 1, len(array)):
@@ -24,13 +24,13 @@ def is_sorted(array):
     return True
 
 
-class TestSelectionSort(unittest.TestCase):
+class TestSort(unittest.TestCase):
 
-    def test_selection_sort(self):
+    def test_sort(self):
         test_array = [i for i in range(1000)]
         while is_sorted(test_array):
             random.shuffle(test_array)
-        selection_sort(test_array)
+        sort(test_array)
         self.assertTrue(is_sorted(test_array))
 
 

@@ -7,7 +7,7 @@ import unittest
 import random
 
 
-def bubble_sort(array):
+def sort(array):
     while True:
         swapped = False
         for index in range(1, len(array)):
@@ -26,13 +26,13 @@ def is_sorted(array):
     return True
 
 
-class TestBubbleSort(unittest.TestCase):
+class TestSort(unittest.TestCase):
 
-    def test_bubble_sort(self):
+    def test_sort(self):
         test_array = [i for i in range(1000)]
         while is_sorted(test_array):
             random.shuffle(test_array)
-        bubble_sort(test_array)
+        sort(test_array)
         self.assertTrue(is_sorted(test_array))
 
 

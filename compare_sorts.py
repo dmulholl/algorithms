@@ -11,6 +11,7 @@ import shellsort
 import mergesort
 import quicksort
 import quicksort_3way
+import heapsort
 
 
 SMALL = 1_000
@@ -25,6 +26,7 @@ algorithms = [
     mergesort,
     quicksort,
     quicksort_3way,
+    heapsort,
 ]
 
 

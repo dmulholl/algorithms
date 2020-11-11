@@ -18,7 +18,7 @@ def shuffle(array):
 
 
 # This algorithm is often implemented using a backwards loop as in many languages this makes the
-# math for selecting the random element nicer. (As above, the loop skips index zero as a minor
+# math for selecting the random element more elegant. (The loop skips the zero index as a minor
 # optimization to avoid swapping the first element with itself.)
 def backwards_shuffle(array):
     for i in range(len(array) - 1, 0, -1):

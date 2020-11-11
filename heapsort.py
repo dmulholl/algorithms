@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 ##
 # This module contains a reference implementation of the heapsort algorithm.
+# Sedgewick, R. and Wayne, K. (2011) Algorithms. 4th Edition. Addison-Wesley, p.336.
 ##
 
 import unittest

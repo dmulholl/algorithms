@@ -41,15 +41,18 @@ def shuffle(array):
     return array
 
 
-if "uniform" in sys.argv:
+if "uni" in sys.argv or "uniform" in sys.argv:
     small_array = [1 for i in range(SMALL)]
     large_array = [1 for i in range(LARGE)]
-elif "ascending" in sys.argv:
+elif "asc" in sys.argv or "ascending" in sys.argv:
     small_array = [i for i in range(SMALL)]
     large_array = [i for i in range(LARGE)]
-elif "descending" in sys.argv:
+elif "des" in sys.argv or "descending" in sys.argv:
     small_array = [i for i in range(SMALL, 0, -1)]
     large_array = [i for i in range(LARGE, 0, -1)]
+elif "dup" in sys.argv or "duplicates" in sys.argv:
+    small_array = [random.randint(0, 50) for i in range(SMALL)]
+    large_array = [random.randint(0, 50) for i in range(LARGE)]
 else:
     small_array = shuffle([i for i in range(SMALL)])
     large_array = shuffle([i for i in range(LARGE)])

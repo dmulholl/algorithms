@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 ##
 # This module contains a reference implementation of a symbol table data structure (aka a map,
-# dictionary, associative array) implemented using a linked list.
+# dictionary, associative array). This implementation uses a linked list with sequential search -
+# in practice this would be too slow for large data sets.
 ##
 
 import unittest

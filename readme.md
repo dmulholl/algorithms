@@ -1,3 +1,3 @@
-# Algorithms
+# Algorithms & Data Structures
 
-This repository contains reference implementations in Python of a number of fundamental algorithms and data structures.
+Reference implementations in Python of a selection of fundamental algorithms and data structures.

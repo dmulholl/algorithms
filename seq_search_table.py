@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 ##
 # This module contains a reference implementation of a symbol table data structure (aka a map,
-# dictionary, associative array). This implementation uses a linked list with sequential search -
-# in practice this would be too slow for large data sets.
+# dictionary, associative array), implemented using a linked list with sequential search.
 ##
 
 import unittest
@@ -16,7 +15,7 @@ class Node:
         self.next = next_node
 
 
-class SymbolTable:
+class SeqSearchTable:
 
     def __init__(self):
         self.head = None
@@ -35,16 +34,18 @@ class SymbolTable:
         return None
 
     # Inserts a key-value pair into the table. Will overwrite the existing value if `key` is
-    # already present in the table.
+    # already present in the table. (Returns 1 if it adds a new entry, 0 if it overwrites an
+    # existing extry.)
     def set(self, key, value):
         node = self.head
         while node is not None:
             if node.key == key:
                 node.value = value
-                return
+                return 0
             node = node.next
         self.head = Node(key, value, self.head)
         self.size += 1
+        return 1
 
     # Deletes the entry for `key` from the table.
     def delete(self, key):
@@ -72,10 +73,10 @@ class SymbolTable:
         return False
 
 
-class TestSymbolTable(unittest.TestCase):
+class TestSeqSearchTable(unittest.TestCase):
 
     def test_symbol_table(self):
-        st = SymbolTable()
+        st = SeqSearchTable()
         st.set("a", 123)
         st.set("b", 456)
         st.set("c", 789)

@@ -15,7 +15,7 @@ class Node:
         self.next = next_node
 
 
-class SeqSearchTable:
+class SymbolTable:
 
     def __init__(self):
         self.head = None
@@ -47,21 +47,24 @@ class SeqSearchTable:
         self.size += 1
         return 1
 
-    # Deletes the entry for `key` from the table.
+    # Deletes the entry for `key` from the table. (Returns -1 if an entry has been found and
+    # deleted, otherwise 0.)
     def delete(self, key):
         if self.is_empty():
-            return
+            return 0
         elif self.head.key == key:
             self.head = self.head.next
             self.size -= 1
+            return -1
         else:
             node = self.head
             while node.next is not None:
                 if node.next.key == key:
                     node.next = node.next.next
                     self.size -= 1
-                    break
+                    return -1
                 node = node.next
+            return 0
 
     # Returns true if the table contains an entry for `key`.
     def contains(self, key):
@@ -76,7 +79,7 @@ class SeqSearchTable:
 class TestSeqSearchTable(unittest.TestCase):
 
     def test_symbol_table(self):
-        st = SeqSearchTable()
+        st = SymbolTable()
         st.set("a", 123)
         st.set("b", 456)
         st.set("c", 789)

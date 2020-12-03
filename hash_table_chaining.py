@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 ##
+# Hash table with separate chaining.
+#
 # This module contains a reference implementation of a hash-based symbol table implemented as an
 # array of linked lists.
+#
+# Ideally the array size m should always be a prime number. (Can implement using a table of the
+# smallest primes greater than each power of two.)
 ##
 
 import unittest
-from seq_search_table import SeqSearchTable
+from symbol_table import SymbolTable
 
 
 class SeparateChainingHashTable:
@@ -13,9 +18,9 @@ class SeparateChainingHashTable:
     def __init__(self, m=997):
         self.n = 0 # Number of entries.
         self.m = m # Hash table array size.
-        self.table = [SeqSearchTable() for _ in range(m)]
+        self.table = [SymbolTable() for _ in range(m)]
 
-    # Returns the number of entries.
+    # Returns the number of key-value entries.
     def size(self):
         return self.n
 
@@ -38,11 +43,7 @@ class SeparateChainingHashTable:
 
     # Deletes the entry for `key` from the table.
     def delete(self, key):
-        seq_table = self.table[self.hash(key)]
-        old_size = seq_table.size
-        seq_table.delete(key)
-        if seq_table.size != old_size:
-            self.n -= 1
+        self.n += self.table[self.hash(key)].delete(key)
 
 
 class TestSeparateChainingHashTable(unittest.TestCase):

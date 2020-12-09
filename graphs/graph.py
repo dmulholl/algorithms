@@ -53,7 +53,7 @@ class Graph:
         return count / 2
 
 
-def tiny_graph():
+def unconnected_graph():
     g = Graph(13)
 
     g.add_edge(0, 5)
@@ -75,16 +75,39 @@ def tiny_graph():
     return g
 
 
+def connected_graph():
+    g = Graph(6)
+    g.add_edge(0, 1)
+    g.add_edge(0, 2)
+    g.add_edge(0, 5)
+    g.add_edge(1, 2)
+    g.add_edge(2, 3)
+    g.add_edge(2, 4)
+    g.add_edge(3, 4)
+    g.add_edge(3, 5)
+    return g
+
+
 class TestGraph(unittest.TestCase):
 
-    def test_graph(self):
-        g = tiny_graph()
+    def test_unconnected_graph(self):
+        g = unconnected_graph()
         self.assertEqual(g.num_vertices, 13)
         self.assertEqual(g.num_edges, 13)
         self.assertEqual(g.degree(0), 4)
         self.assertEqual(g.degree(1), 1)
         self.assertEqual(g.degree(3), 2)
         self.assertEqual(g.degree(9), 3)
+        self.assertEqual(g.max_degree(), 4)
+
+    def test_connected_graph(self):
+        g = connected_graph()
+        self.assertEqual(g.num_vertices, 6)
+        self.assertEqual(g.num_edges, 8)
+        self.assertEqual(g.degree(0), 3)
+        self.assertEqual(g.degree(1), 2)
+        self.assertEqual(g.degree(2), 4)
+        self.assertEqual(g.degree(3), 3)
         self.assertEqual(g.max_degree(), 4)
 
 

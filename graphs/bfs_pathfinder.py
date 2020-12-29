@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##
-# This module uses breadth-first search to find the shortest (i.e. minimum number of hops) paths
+# This module uses breadth-first search to find the shortest (i.e. minimum number of edges) paths
 # in a graph.
 ##
 

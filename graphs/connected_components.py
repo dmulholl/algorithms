@@ -32,7 +32,7 @@ class ConnectedComponents:
         return self.component_ids[v]
 
 
-def unconnected_graph():
+def make_graph():
     g = graph.Graph(13)
 
     g.add_edge(0, 5)
@@ -55,7 +55,7 @@ def unconnected_graph():
 
 
 def main():
-    g = unconnected_graph()
+    g = make_graph()
     cc = ConnectedComponents(g)
 
     components = {i: [] for i in range(cc.component_count)}

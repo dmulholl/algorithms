@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 ##
-# This module contains a reference implementation of an undirected graph data structure implemented
-# using a vertex-indexed array of adjacency lists.
+# This module contains a reference implementation of an undirected graph implemented using a
+# vertex-indexed array of adjacency lists.
 #
 # V vertices are identified by the integers [0..V-1].
 # Each edge appears twice in the data structure.

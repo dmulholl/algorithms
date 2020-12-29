@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 ##
-# Depth-first search on an undirected graph.
+# Depth-first search.
 ##
 
 import unittest
 import graph
 
 
-class RecursiveDepthFirstSearch:
+class RecursiveDFS:
 
     def __init__(self, graph, source_vertex):
         self.num_vertices = graph.num_vertices
@@ -29,7 +29,7 @@ class RecursiveDepthFirstSearch:
         return self.count == self.num_vertices
 
 
-class StackDepthFirstSearch:
+class StackBasedDFS:
 
     def __init__(self, graph, source_vertex):
         self.num_vertices = graph.num_vertices
@@ -58,7 +58,7 @@ class TestDFS(unittest.TestCase):
 
     def test_recursive_dfs_unconnected(self):
         g = graph.unconnected_graph()
-        dfs = RecursiveDepthFirstSearch(g, 0)
+        dfs = RecursiveDFS(g, 0)
         self.assertEqual(dfs.count, 7)
         self.assertEqual(dfs.is_marked(1), True)
         self.assertEqual(dfs.is_marked(6), True)
@@ -69,12 +69,12 @@ class TestDFS(unittest.TestCase):
 
     def test_recursive_dfs_connected(self):
         g = graph.connected_graph()
-        dfs = RecursiveDepthFirstSearch(g, 0)
+        dfs = RecursiveDFS(g, 0)
         self.assertEqual(dfs.is_connected(), True)
 
     def test_stack_dfs_unconnected(self):
         g = graph.unconnected_graph()
-        dfs = StackDepthFirstSearch(g, 0)
+        dfs = StackBasedDFS(g, 0)
         self.assertEqual(dfs.count, 7)
         self.assertEqual(dfs.is_marked(1), True)
         self.assertEqual(dfs.is_marked(6), True)
@@ -85,7 +85,7 @@ class TestDFS(unittest.TestCase):
 
     def test_stack_dfs_connected(self):
         g = graph.connected_graph()
-        dfs = StackDepthFirstSearch(g, 0)
+        dfs = StackBasedDFS(g, 0)
         self.assertEqual(dfs.is_connected(), True)
 
 

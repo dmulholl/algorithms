@@ -42,7 +42,7 @@ class CycleDetector:
         return len(self.cycle) != 0
 
 
-def make_digraph():
+def make_digraph_with_cycle():
     d = digraph.Digraph(6)
     d.add_edge(0, 1)
     d.add_edge(0, 2)
@@ -54,7 +54,7 @@ def make_digraph():
 
 
 def main():
-    d = make_digraph()
+    d = make_digraph_with_cycle()
     cd = CycleDetector(d)
     print(f"Has Cycle: {cd.has_cycle()}")
     print(f"Cycle: {cd.cycle}")

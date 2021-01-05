@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##
-# This module uses depth-first search to identify the connected components within a graph.
+# This module uses depth-first search to identify the connected components in an undirected graph.
 ##
 
 import graph

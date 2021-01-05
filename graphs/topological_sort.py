@@ -17,7 +17,7 @@ class TopologicalSort:
         self.is_dag = not cycle_detector.CycleDetector(digraph).has_cycle()
         if self.is_dag:
             dfo = DepthFirstOrder(digraph)
-            self.order = list(reversed(dfo.postorder))
+            self.order = DepthFirstOrder(digraph).reverse_postorder()
 
 
 class DepthFirstOrder:
@@ -38,6 +38,9 @@ class DepthFirstOrder:
             if not self.marked[w]:
                 self._dfs(digraph, w)
         self.postorder.append(v)
+
+    def reverse_postorder(self):
+        return list(reversed(self.postorder))
 
 
 def make_dag():

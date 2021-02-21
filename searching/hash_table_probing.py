@@ -36,7 +36,7 @@ class LinearProbingHashTable:
         self.values = temp.values
         self.m = temp.m
 
-    # Returns an integer in the inclusive range [0..m].
+    # Returns an integer in the range 0 to m - 1.
     def hash(self, key):
         return hash(key) % self.m
 

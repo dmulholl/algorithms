@@ -5,10 +5,7 @@
 # This module contains a reference implementation of a hash-based symbol table implemented using
 # linear probing.
 #
-# The load factor n/m needs to be less than 1/2 for satisfactory performance.
-
-# Ideally the array size m should always be a prime number. (Can implement using a table of the
-# smallest primes greater than each power of two.)
+# The load factor n/m should be less than 1/2 for satisfactory performance.
 ##
 
 import unittest

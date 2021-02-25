@@ -4,9 +4,6 @@
 #
 # This module contains a reference implementation of a hash-based symbol table implemented as an
 # array of linked lists.
-#
-# Ideally the array size m should always be a prime number. (Can implement using a table of the
-# smallest primes greater than each power of two.)
 ##
 
 import unittest

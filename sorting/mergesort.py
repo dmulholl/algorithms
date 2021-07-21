@@ -37,12 +37,12 @@ def merge(array, aux_array, low, mid, high):
         elif j > high:
             array[k] = aux_array[i]
             i += 1
-        elif aux_array[i] < aux_array[j]:
-            array[k] = aux_array[i]
-            i += 1
-        else:
+        elif aux_array[j] < aux_array[i]:
             array[k] = aux_array[j]
             j += 1
+        else:
+            array[k] = aux_array[i]
+            i += 1
 
 
 # Returns true if the input is empty, of length 1, or sorted in ascending order.
